@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { MoneyManagementScreen } from '../screens/MoneyManagementScreen';
+import { transactions } from '../data/transactions';
 import type { MainTabParamList } from '../navigation/types';
 import type { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 
@@ -36,6 +37,23 @@ describe('MoneyManagementScreen', () => {
     expect(screen.getByText('Add ExPense')).toBeTruthy();
     expect(screen.getByTestId('add-expense-submit')).toBeTruthy();
     expect(screen.getByTestId('add-name')).toBeTruthy();
+  });
+
+  it('renders the Add Expense fields in order Name, Beschreibung, Select Date, Amount', async () => {
+    await renderScreen();
+
+    await fireEvent.press(screen.getByTestId('fab-add-expense'));
+
+    const placeholders = screen
+      .getAllByPlaceholderText(/.+/)
+      .map((input) => input.props.placeholder);
+    expect(placeholders).toEqual(['Name', 'Beschreibung', 'Select Date', 'Amount']);
+  });
+
+  it('uses the ticket date for the Starbucks transaction', () => {
+    expect(transactions.find((t) => t.description === 'Spend On Starbucks')?.date).toBe(
+      '01- Sunday'
+    );
   });
 
   it('returns to the overview after submitting Add Expense', async () => {

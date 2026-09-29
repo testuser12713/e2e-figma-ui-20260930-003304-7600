@@ -247,25 +247,25 @@ function AddExpense({ onBack, onSubmit }: { onBack: () => void; onSubmit: () => 
       />
       <Field
         top={302}
+        icon="calendar"
+        iconLeft={57}
+        iconTop={316}
+        iconSize={16}
+        placeholder="Select Date"
+        testID="add-date"
+        useImageIcon
+      />
+      <Field
+        top={365}
         icon="map-outline"
         iconLeft={57}
-        iconTop={314}
+        iconTop={377}
         iconSize={18}
         placeholder="Amount"
         value={amount}
         onChangeText={setAmount}
         testID="add-amount"
         keyboardType="decimal-pad"
-      />
-      <Field
-        top={365}
-        icon="calendar"
-        iconLeft={57}
-        iconTop={379}
-        iconSize={16}
-        placeholder="Select Date"
-        testID="add-date"
-        useImageIcon
       />
 
       <Pressable
@@ -630,7 +630,7 @@ const styles = StyleSheet.create({
   submitButton: {
     position: 'absolute',
     left: 40,
-    top: 437,
+    top: 480,
     width: 334,
     height: 43,
     borderRadius: theme.radii.lg,

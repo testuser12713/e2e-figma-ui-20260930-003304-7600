@@ -21,7 +21,7 @@ export const transactions: Transaction[] = [
   {
     id: 't2',
     category: 'coffee',
-    date: '02- Monday',
+    date: '01- Sunday',
     description: 'Spend On Starbucks',
     amount: '13.00€',
   },
