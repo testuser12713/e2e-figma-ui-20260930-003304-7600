@@ -33,6 +33,7 @@ Thumbs.db
 node_modules/
 .expo/
 web-build/
+expo-env.d.ts
 release/
 .vite/
 .parcel-cache/
@@ -41,6 +42,21 @@ release/
 .svelte-kit/
 *.tsbuildinfo
 *.local
+
+# Expo native build output
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+.metro-health-check*
+/ios
+/android
+
+# local env files
+.env*.local
 
 # Compiled artifacts (Go / Rust / Java / .NET / C) + tester harness
 target/
