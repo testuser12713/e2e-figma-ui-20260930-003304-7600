@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react-native';
 
 import { DashboardScreen } from '../screens/DashboardScreen';
+import { dashboardStats } from '../data/stats';
 
 jest.mock('react-native-safe-area-context', () =>
   require('react-native-safe-area-context/jest/mock').default
@@ -14,6 +15,18 @@ function makeNavigation() {
 }
 
 describe('DashboardScreen', () => {
+  it('uses the required month axis M J A S O N D', () => {
+    expect(dashboardStats.chart.months.map((m) => m.label)).toEqual([
+      'M',
+      'J',
+      'A',
+      'S',
+      'O',
+      'N',
+      'D',
+    ]);
+  });
+
   it('renders the header, search and the four category cards', async () => {
     const { navigation } = makeNavigation();
     await render(<DashboardScreen navigation={navigation as never} route={{} as never} />);

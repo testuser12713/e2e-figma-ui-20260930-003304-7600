@@ -12,16 +12,12 @@ export const dashboardStats = {
   chart: {
     months: [
       { label: 'M', x: 49 },
-      { label: 'J', x: 76 },
-      { label: 'J', x: 103 },
-      { label: 'A', x: 129 },
-      { label: 'S', x: 156 },
-      { label: 'O', x: 183 },
-      { label: 'N', x: 210 },
-      { label: 'D', x: 237 },
-      { label: 'J', x: 263 },
-      { label: 'M', x: 290 },
-      { label: 'A', x: 317 },
+      { label: 'J', x: 94 },
+      { label: 'A', x: 139 },
+      { label: 'S', x: 183 },
+      { label: 'O', x: 228 },
+      { label: 'N', x: 273 },
+      { label: 'D', x: 317 },
     ],
     yAxis: [
       { label: '90', y: 382 },
